@@ -4,7 +4,7 @@ import "react-typist/dist/Typist.css";
 
 import useEventListener from "@use-it/event-listener";
 
-import useScrollToBottom from "./utils/useScrollToBottom";
+import useScrollToBottom from "./useScrollToBottom";
 
 const Input: React.FC<{
   active: boolean;
@@ -16,7 +16,7 @@ const Input: React.FC<{
 
   useEventListener("keypress", ({ key }: any) => {
     if (!active) return;
-    if (key === "Enter") {
+    if (key === "Enter" && _value.length > 0) {
       onEnter(_value);
     } else if (key.length === 1) {
       setValue(_value + key);
@@ -46,6 +46,7 @@ type ConsoleInputType = {
   entryPrefix?: string;
   children: any;
   speed?: "normal" | "fast" | "slow";
+  ShowOnCompletion?: React.FC;
 };
 const Console: React.FC<ConsoleInputType> = ({
   active = false,
@@ -55,6 +56,7 @@ const Console: React.FC<ConsoleInputType> = ({
   entry,
   entryPrefix = "",
   speed = "normal",
+  ShowOnCompletion,
 }) => {
   const [lineCount, setLineCount] = useState(0);
   const [inputArray, setInputArray] = useState([Input]);
@@ -129,6 +131,12 @@ const Console: React.FC<ConsoleInputType> = ({
       >
         {children}
       </Typist>
+      {typingDone && ShowOnCompletion && (
+        <>
+          <ShowOnCompletion />
+          <br />
+        </>
+      )}
       {typingDone && (choices || entry) && inputs}
     </>
   );
