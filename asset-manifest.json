@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/honest-ai/static/css/main.a94ee10c.chunk.css",
+    "main.js": "/honest-ai/static/js/main.701538ec.chunk.js",
+    "main.js.map": "/honest-ai/static/js/main.701538ec.chunk.js.map",
+    "runtime-main.js": "/honest-ai/static/js/runtime-main.e3628980.js",
+    "runtime-main.js.map": "/honest-ai/static/js/runtime-main.e3628980.js.map",
+    "static/css/2.dbd8b1e0.chunk.css": "/honest-ai/static/css/2.dbd8b1e0.chunk.css",
+    "static/js/2.8deb6e95.chunk.js": "/honest-ai/static/js/2.8deb6e95.chunk.js",
+    "static/js/2.8deb6e95.chunk.js.map": "/honest-ai/static/js/2.8deb6e95.chunk.js.map",
+    "index.html": "/honest-ai/index.html",
+    "precache-manifest.abee2114c6260c6098569131c4574ad4.js": "/honest-ai/precache-manifest.abee2114c6260c6098569131c4574ad4.js",
+    "service-worker.js": "/honest-ai/service-worker.js",
+    "static/css/2.dbd8b1e0.chunk.css.map": "/honest-ai/static/css/2.dbd8b1e0.chunk.css.map",
+    "static/css/main.a94ee10c.chunk.css.map": "/honest-ai/static/css/main.a94ee10c.chunk.css.map",
+    "static/js/2.8deb6e95.chunk.js.LICENSE.txt": "/honest-ai/static/js/2.8deb6e95.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e3628980.js",
+    "static/css/2.dbd8b1e0.chunk.css",
+    "static/js/2.8deb6e95.chunk.js",
+    "static/css/main.a94ee10c.chunk.css",
+    "static/js/main.701538ec.chunk.js"
+  ]
+}
