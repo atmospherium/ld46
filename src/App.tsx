@@ -3,9 +3,14 @@ import "./App.css";
 import useScrollToBottom from "./utils/useScrollToBottom";
 
 import { Intro, Jokes, Problem } from "./Scenes";
-import { useMount } from "react-use";
+import { useMount, useTitle } from "react-use";
+
+window.onkeydown = function (e) {
+  if (e.keyCode === 8 && e.target === document.body) e.preventDefault();
+};
 
 function App() {
+  useTitle("THE HONEST AI");
   const [voices, setVoices] = useState<any[]>([]);
   useMount(() => {
     setTimeout(() => {
@@ -13,8 +18,8 @@ function App() {
     }, 1000);
   });
 
-  const [attributes, setAttributes] = useState({});
-  const [consoleArray, setConsoleArray] = useState([Problem]);
+  const [attributes, setAttributes] = useState<any>({});
+  const [consoleArray, setConsoleArray] = useState([Intro]);
 
   const addAttribute = (attributeName, attributeValue) => {
     setAttributes(
@@ -30,7 +35,7 @@ function App() {
   useScrollToBottom(consoleArray);
 
   return (
-    <div className="App">
+    <div className={`App ${attributes.replaced && "reverse"}`}>
       <div className="Console">
         {(voices.length > 0 &&
           consoleArray.map((Component, index) => (

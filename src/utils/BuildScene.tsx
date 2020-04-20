@@ -4,7 +4,7 @@ import Console from "./Console";
 import { pickBy, identity } from "lodash";
 
 export const Speech = ({ content, parameters, voices }) => {
-  const { voice, ...rest } = parameters;
+  const { voice, ...rest } = parameters ?? {};
   useSpeech(
     content,
     Object.assign({}, rest, { voice: voices[voice] ?? undefined })
@@ -124,6 +124,7 @@ const Scene: BuildSceneType = (content, options) => ({
       <Console
         active={active}
         children={consoleContent}
+        attributes={attributes}
         {...consoleProps}
         speed={options?.speed}
       />

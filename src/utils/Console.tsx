@@ -46,7 +46,8 @@ type ConsoleInputType = {
   entryPrefix?: string;
   children: any;
   speed?: "normal" | "fast" | "slow";
-  ShowOnCompletion?: React.FC;
+  attributes?: any;
+  ShowOnCompletion?: React.FC<{ attributes?: any }>;
 };
 const Console: React.FC<ConsoleInputType> = ({
   active = false,
@@ -57,6 +58,7 @@ const Console: React.FC<ConsoleInputType> = ({
   entryPrefix = "",
   speed = "normal",
   ShowOnCompletion,
+  attributes,
 }) => {
   const [lineCount, setLineCount] = useState(0);
   const [inputArray, setInputArray] = useState([Input]);
@@ -94,6 +96,7 @@ const Console: React.FC<ConsoleInputType> = ({
   };
 
   useScrollToBottom(inputArray);
+  useScrollToBottom(typingDone);
   useScrollToBottom(lineCount);
 
   const inputs = (
@@ -133,7 +136,7 @@ const Console: React.FC<ConsoleInputType> = ({
       </Typist>
       {typingDone && ShowOnCompletion && (
         <>
-          <ShowOnCompletion />
+          <ShowOnCompletion attributes={attributes} />
           <br />
         </>
       )}

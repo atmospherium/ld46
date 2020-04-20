@@ -22,6 +22,10 @@ body {
   width: 100%;
 }
 
+.App.reverse {
+  transform: scaleX(-1);
+}
+
 .Console {
   padding: 25px;
   display: table-cell;

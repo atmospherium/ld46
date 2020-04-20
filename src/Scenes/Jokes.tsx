@@ -11,8 +11,18 @@ const Jokes = formatSceneQueue([
       "Smalltalk Persists: As an AI I am well versed in humor. Would you like to tell me a joke?",
     DisplayContent: () => (
       <span>
-        <Emphasis>Smalltalk Persists:</Emphasis> As an AI I am well versed in
-        humor. Would you like to tell me a joke?
+        <Emphasis>Smalltalk Persists:</Emphasis> As an AI I am w
+        <Danger>e</Danger>ll versed in humor. Would you like to te
+        <Danger>l</Danger>l me a joke?
+      </span>
+    ),
+  },
+  {
+    text: "I promise that I will laugh",
+    DisplayContent: () => (
+      <span>
+        I <Danger>p</Danger>ro<Danger>m</Danger>is<Danger>e</Danger> that I will
+        laugh.
       </span>
     ),
     ShowOnCompletion: () => (

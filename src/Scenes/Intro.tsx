@@ -37,8 +37,8 @@ const Intro = formatSceneQueue([
     text: "Smalltalk initiated. Wonderful weather we're having, eh?",
     DisplayContent: () => (
       <span>
-        <Emphasis>Smalltalk Initiated:</Emphasis> Wonderful weather we're
-        having, eh?
+        <Emphasis>Smalltalk Initiated:</Emphasis> Wonderful weat
+        <Danger>h</Danger>er we're having, eh?
       </span>
     ),
     ShowOnCompletion: () => (
