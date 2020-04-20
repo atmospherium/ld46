@@ -10,7 +10,7 @@ window.onkeydown = function (e) {
 };
 
 function App() {
-  useTitle("THE HONEST AI");
+  useTitle("The Honest AI");
   const [voices, setVoices] = useState<any[]>([]);
   useMount(() => {
     setTimeout(() => {
