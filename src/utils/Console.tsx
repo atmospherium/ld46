@@ -11,32 +11,35 @@ const Input: React.FC<{
   onEnter: Function;
   entryPrefix?: string;
   value?: string;
-}> = React.memo(({ active = false, onEnter, entryPrefix, value = "" }) => {
-  const [_value, setValue] = useState(value);
+  color?: string;
+}> = React.memo(
+  ({ active = false, onEnter, entryPrefix, color = "white", value = "" }) => {
+    const [_value, setValue] = useState(value);
 
-  useEventListener("keypress", ({ key }: any) => {
-    if (!active) return;
-    if (key === "Enter" && _value.length > 0) {
-      onEnter(_value);
-    } else if (key.length === 1) {
-      setValue(_value + key);
-    }
-  });
+    useEventListener("keypress", ({ key }: any) => {
+      if (!active) return;
+      if (key === "Enter" && _value.length > 0) {
+        onEnter(_value);
+      } else if (key.length === 1) {
+        setValue(_value + key);
+      }
+    });
 
-  useEventListener("keydown", ({ key }: any) => {
-    if (!active) return;
-    if (key === "Backspace") {
-      setValue(_value.substring(0, _value.length - 1));
-    }
-  });
+    useEventListener("keydown", ({ key }: any) => {
+      if (!active) return;
+      if (key === "Backspace") {
+        setValue(_value.substring(0, _value.length - 1));
+      }
+    });
 
-  return (
-    <span>
-      &gt; {entryPrefix && `${entryPrefix}: `}
-      {_value}
-    </span>
-  );
-});
+    return (
+      <span style={{ color }}>
+        &gt; {entryPrefix && `${entryPrefix}: `}
+        {_value}
+      </span>
+    );
+  }
+);
 
 type ConsoleInputType = {
   active: boolean;
@@ -109,6 +112,7 @@ const Console: React.FC<ConsoleInputType> = ({
               value={inputValues[index]}
               entryPrefix={entryPrefix}
               active={active && index === inputArray.length - 1}
+              color={(active && attributes.replaced && "red") || "white"}
               onEnter={resolveAction}
             />
           );
