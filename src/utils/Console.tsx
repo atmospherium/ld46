@@ -15,6 +15,7 @@ const Input: React.FC<{
 }> = React.memo(
   ({ active = false, onEnter, entryPrefix, color = "white", value = "" }) => {
     const [_value, setValue] = useState(value);
+    useScrollToBottom(_value);
 
     useEventListener("keypress", ({ key }: any) => {
       if (!active) return;
